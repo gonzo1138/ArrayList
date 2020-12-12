@@ -22,7 +22,7 @@ public class Collections {
 
         // --------------------------------------------------------------
 
-        ArrayList lottozahlen = new ArrayList() {
+        ArrayList lottozahlen = new ArrayList() {           // Ohne Typ-Parameter wird ein Array-List aus Objekten erstellt
             {
                 add(1);
                 add(17);
@@ -50,16 +50,15 @@ public class Collections {
 
         // --------------------------------------------------------------
 
-        ArrayList zahlen = new ArrayList(0);
-        for (int i= 10; i<=1000; i+=10){
-            zahlen.add(i);
-        }
+        ArrayList<Integer> zahlen = new ArrayList<>(1000);      // ArrayList mit Integers
+
+        zahlen.forEach((zahlen.indexOf()+1)*10);
 
         for(Object i : zahlen){
             System.out.println(i);
         }
 
-        ListIterator<Object> iterator = zahlen.listIterator();
+        ListIterator<Integer> iterator = zahlen.listIterator();
         while (iterator.hasNext()) {
             System.out.println(iterator.next());
         }
